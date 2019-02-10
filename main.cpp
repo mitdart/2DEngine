@@ -3,41 +3,32 @@
 #include <fstream>
 
 
-
-
-void readDataBase(std::string filename, std::string* text)
-{
-    std::ifstream DATABASE(filename);
-    while(!DATABASE.eof())
-    {
-
-        std::string str;
-        std::getline(DATABASE, str);
-        *text += str;
-
-    }
-}
-
-
-
-
-
 int main()
 {
 
-    sf::RenderWindow window(sf::VideoMode(1600, 900), "My okno");
+    sf::RenderWindow window(sf::VideoMode(1600, 900), "Hahakektyper");
 
     sf::Font font;
     font.loadFromFile("/home/lenovo/Files/Info Project/Hackertyper/arial.ttf");
 
     std::string textik = "";
 
+
+
     std::ifstream DATABASE("/home/lenovo/Files/Info Project/Hackertyper/hack.txt");
+
+    std::string stor;
+
+    while (!DATABASE.eof()) {std::string str; std::getline(DATABASE, str); stor += str; stor += "\n";}
+
+
 
 
 
     sf::View view( sf::FloatRect(0,0,1600,900));
 
+    int i = 0;
+    int indicator = 0;
     while(window.isOpen())
     {
         sf::Event event;
@@ -49,14 +40,31 @@ int main()
             if (event.type == sf::Event::KeyPressed)
             {
 
-                std::string str;
-                std::getline(DATABASE, str);
-                textik += str;
-                textik += "\n";
+                if (indicator == 0)
+                {
+                    for (int j = 0; j < 4; j++)
+                    {
+                        if (stor[j + i*4] == *"\0")
+                        {
+                            indicator = 1;
+                            break;
+                        }
+                        else
+                        {
+                            textik += stor[j + i*4];
+                        }
+                    }
+                    i++;
+                }
+
+
+
                 fflush(0);
             }
         }
-        sf::Text text(textik, font, 12);
+        sf::Text text(textik, font, 15);
+        text.setOutlineColor(sf::Color::Red);
+        text.setFillColor(sf::Color::Red);
 
         float vel = 0.05;
         int edge = 20;
