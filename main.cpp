@@ -7,7 +7,7 @@ int main()
 {
 
     HackerTyper MainWindow(1600, 900, "Hahakektyper");
-    ReadFile("/home/lenovo/Files/Info Project/Hackertyper/hack.txt", &MainWindow);
+    ReadFile("hack.txt", &MainWindow);
     MainWindow.AppRun();
 
     return 0;
