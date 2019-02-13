@@ -17,7 +17,7 @@ void HackerTyper::AppRun()
     sf::View view( sf::FloatRect(0,0,1600,900));
 
     sf::Font font;
-    font.loadFromFile("/home/lenovo/Files/Info Project/Hackertyper/arial.ttf");
+    font.loadFromFile("arial.ttf");
 
     int i = 0;
     int indicator = 0;
