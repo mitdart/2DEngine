@@ -15,7 +15,7 @@ struct TransformOptions
 class EventHandler
 {
 public:
-
+    EventHandler();
     DrawManager* drawManager;
     void EHClose();
     TransformOptions options;

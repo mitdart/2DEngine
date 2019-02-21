@@ -13,12 +13,12 @@ EventManager::EventManager()
 
 
 
-void EventManager::Execute(EventHandler Handler, sf::RenderWindow window)
+void EventManager::Execute()
 {
 
     sf::Event event;
     void (*action)();
-    while(window.pollEvent(event))
+    while(eventHandler->drawManager->app->window.pollEvent(event))
     {
         currentKeyCode = event.type;
 

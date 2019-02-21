@@ -27,14 +27,15 @@ private:
 
 public:
 
-    EventHandler* Handler;
+    EventHandler* eventHandler;
     EventManager();
 
     int currentKeyCode;
-    void Execute(EventHandler Handler, sf::RenderWindow window);
+    void Execute();
+
     typedef void (EventHandler::*Action)(void);
-    std::map<int, Action> ActionBinder = {{sf::Event::KeyPressed, Handler->TransformText},
-                                          {sf::Event::Closed , Handler->EHClose}};
+    std::map<int, Action> ActionBinder = {{sf::Event::KeyPressed, &EventHandler::TransformText},
+                                          {sf::Event::Closed , &EventHandler::EHClose}};
 
 
 
