@@ -1,12 +1,15 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
-#include "eventmanager.h"
+#include "datastorage.h"
 #include "drawmanager.h"
 #include "eventhandler.h"
+#include "eventmanager.h"
+#include "application.h"
 #include <map>
 
 int main()
 {
-    std::cout << "Hello World!" << std::endl;
+    Application app;
+    app.AppRun();
     return 0;
 }

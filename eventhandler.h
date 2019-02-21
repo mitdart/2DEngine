@@ -1,4 +1,3 @@
-
 #ifndef EVENTHANDLER_H
 #define EVENTHANDLER_H
 #include "drawmanager.h"
@@ -8,8 +7,6 @@ struct TransformOptions
 {
   int counter = 0;
   int indicator = 0;
-  std::string AppText = "";
-  std::string TmpText = "";
 };
 
 class EventHandler

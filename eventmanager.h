@@ -6,19 +6,6 @@
 #include <vector>
 
 
-struct Binder
-{
-    int actionCode;
-    void (*action)();
-    Binder(int number, void (*function)())
-    {
-        this->actionCode = number;
-        this->action = function;
-    }
-
-};
-
-
 class EventManager
 {
 private:
@@ -30,7 +17,6 @@ public:
     EventHandler* eventHandler;
     EventManager();
 
-    int currentKeyCode;
     void Execute();
 
     typedef void (EventHandler::*Action)(void);

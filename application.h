@@ -1,17 +1,20 @@
 #ifndef APPLICATION_H
 #define APPLICATION_H
 #include <SFML/Graphics.hpp>
+#include "datastorage.h"
+#include "drawmanager.h"
+#include "eventhandler.h"
+#include "eventmanager.h"
+
+
 
 class Application
 {
 public:
 
     Application();
+    void AppRun();
 
-    sf::RenderWindow window;
-    std::string AppText = "";
-    std::string TmpText = "";
-    sf::Font font;
 };
 
 #endif // APPLICATION_H

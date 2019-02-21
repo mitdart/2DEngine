@@ -7,8 +7,7 @@
 
 EventManager::EventManager()
 {
-   // ActionBinder.push_back(Binder(sf::Event::KeyPressed, Handler->TransformText));
-   // ActionBinder.push_back(Binder(sf::Event::Closed, Handler->EHClose));
+
 }
 
 
@@ -17,11 +16,11 @@ void EventManager::Execute()
 {
 
     sf::Event event;
-    void (*action)();
-    while(eventHandler->drawManager->app->window.pollEvent(event))
-    {
-        currentKeyCode = event.type;
 
+    while(eventHandler->drawManager->window->pollEvent(event))
+    {
+
+        (eventHandler->*ActionBinder.find(event.type)->second)();
 
     }
 
