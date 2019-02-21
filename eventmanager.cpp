@@ -16,11 +16,14 @@ void EventManager::Execute()
 {
 
     sf::Event event;
-
     while(eventHandler->drawManager->window->pollEvent(event))
     {
 
-        (eventHandler->*ActionBinder.find(event.type)->second)();
+        auto action = (ActionBinder.find(event.type));
+        if (action != ActionBinder.end())
+        {
+            (eventHandler->*action->second)();
+        }
 
     }
 

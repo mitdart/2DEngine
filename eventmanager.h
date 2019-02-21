@@ -3,7 +3,7 @@
 #include <SFML/Graphics.hpp>
 #include "eventhandler.h"
 #include <functional>
-#include <vector>
+#include <map>
 
 
 class EventManager
@@ -21,11 +21,8 @@ public:
 
     typedef void (EventHandler::*Action)(void);
     std::map<int, Action> ActionBinder = {{sf::Event::KeyPressed, &EventHandler::TransformText},
-                                          {sf::Event::Closed , &EventHandler::EHClose}};
-
-
-
-
+                                          {sf::Event::Closed , &EventHandler::EHClose},
+                                          {sf::Event::KeyReleased, &EventHandler::pass}};
 
 
 
@@ -35,3 +32,4 @@ public:
 
 
 #endif // EVENTMANAGER_H
+

@@ -8,7 +8,7 @@ class DataStorage
 {
 public:
     DataStorage();
-    std::string AppText;
+    std::string AppText = "";
     std::string TmpText = "";
     sf::Font font;
 

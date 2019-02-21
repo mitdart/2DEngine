@@ -36,5 +36,6 @@ void EventHandler::TransformText()
         if(options.indicator == 0){(options.counter)++;}
     }
     fflush(0);
+
 }
 

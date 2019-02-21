@@ -1,4 +1,6 @@
 #include "application.h"
+#include <iostream>
+
 
 Application::Application()
 {
@@ -9,20 +11,24 @@ Application::Application()
 
 void Application::AppRun()
 {
-    sf::RenderWindow window(sf::VideoMode(1600, 900), "Hackertyper");
+    sf::RenderWindow windoww(sf::VideoMode(1600, 900), "Hackertyper");
+
     DataStorage dataStorage;
     DrawManager drawManager;
     drawManager.dataStorage = &dataStorage;
-
+    drawManager.window = &windoww;
     EventHandler eventHandler;
     eventHandler.drawManager = &drawManager;
     EventManager eventManager;
     eventManager.eventHandler = &eventHandler;
 
-    while(window.isOpen())
+    while(windoww.isOpen())
     {
         eventManager.Execute();
-        window.display();
+        windoww.clear();
+        drawManager.DrawTmpText();
+        windoww.display();
     }
+
 
 }
