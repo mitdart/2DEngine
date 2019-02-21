@@ -10,7 +10,7 @@ struct Binder
 {
     int actionCode;
     void (*action)();
-    Binder(int number, void function())
+    Binder(int number, void (*function)())
     {
         this->actionCode = number;
         this->action = function;
@@ -32,7 +32,9 @@ public:
 
     int currentKeyCode;
     void Execute(EventHandler Handler, sf::RenderWindow window);
-    std::vector<Binder> ActionBinder;
+    typedef void (EventHandler::*Action)(void);
+    std::map<int, Action> ActionBinder = {{sf::Event::KeyPressed, Handler->TransformText},
+                                          {sf::Event::Closed , Handler->EHClose}};
 
 
 

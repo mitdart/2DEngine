@@ -7,8 +7,8 @@
 
 EventManager::EventManager()
 {
-    ActionBinder.push_back(Binder(sf::Event::KeyPressed, EventHandler::transformText));
-    ActionBinder.push_back(Binder(sf::Event::Closed, EventHandler::closeWindow));
+   // ActionBinder.push_back(Binder(sf::Event::KeyPressed, Handler->TransformText));
+   // ActionBinder.push_back(Binder(sf::Event::Closed, Handler->EHClose));
 }
 
 
@@ -21,15 +21,7 @@ void EventManager::Execute(EventHandler Handler, sf::RenderWindow window)
     while(window.pollEvent(event))
     {
         currentKeyCode = event.type;
-        for (auto element:ActionBinder)
-        {
 
-            if (element.actionCode == currentKeyCode)
-            {
-                action = element.action;
-            }
-
-        }
 
     }
 
