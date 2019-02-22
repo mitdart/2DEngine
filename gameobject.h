@@ -10,7 +10,7 @@ public:
     std::string name;
 
 
-    std::vector<GameObjectComponent*> OBJComponents;
+    //std::vector<GameObjectComponent*> OBJComponents;
 
 
 
