@@ -1,18 +1,20 @@
 #ifndef GAMEOBJECT_H
 #define GAMEOBJECT_H
 #include <string>
+#include <SFML/Graphics.hpp>
+
 
 class GameObject
 {
 public:
 
+
     GameObject();
     std::string name;
-
-
-    //std::vector<GameObjectComponent*> OBJComponents;
-
-
+    double x, y, dx, dy;
+    int dir;
+    int height, width;
+    sf::Texture texture;
 
 };
 
