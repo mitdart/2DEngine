@@ -1,3 +1,4 @@
-/CMakeLists.txt
-/CMakeLists.txt.user
+CMakeLists.txt
+CMakeLists.txt.user
 /SFML/*
+.directory
