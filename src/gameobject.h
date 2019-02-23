@@ -1,4 +1,4 @@
-#ifndef GAMEOBJECT_H
+creatures#ifndef GAMEOBJECT_H
 #define GAMEOBJECT_H
 #include <string>
 #include <SFML/Graphics.hpp>
@@ -26,8 +26,6 @@ struct Direction
 class GameObject
 {
 public:
-
-
     GameObject();
     std::string name;
     Coordinates coordinate;
