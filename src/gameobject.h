@@ -4,6 +4,25 @@
 #include <SFML/Graphics.hpp>
 
 
+
+
+
+struct Coordinates
+{
+    double x = 0;
+    double y = 0;
+};
+
+struct Direction
+{
+    double x;
+    double y;
+
+};
+
+
+
+
 class GameObject
 {
 public:
@@ -11,10 +30,8 @@ public:
 
     GameObject();
     std::string name;
-    double x, y, dx, dy;
-    int dir;
-    int height, width;
-    sf::Texture texture;
+    Coordinates coordinate;
+    Direction direction;
 
 };
 
