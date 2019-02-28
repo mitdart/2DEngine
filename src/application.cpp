@@ -33,13 +33,14 @@ void Application::selfInit()
 
 void Application::AppRun()
 {
+    this->selfInit();
 
-    while(drawManager->window.isOpen())
+    while(this->drawManager->window.isOpen())
     {
-        eventManager->Execute();
+        this->eventManager->Execute();
 
-        drawManager->drawObject();
-        drawManager->window.display();
+        this->drawManager->drawObject();
+        this->drawManager->window.display();
 
     }
 

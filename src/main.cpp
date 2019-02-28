@@ -12,7 +12,7 @@ Application* Application::ex_instance = 0;
 
 int main()
 {
-    Application app;
-    app.AppRun();
+
+    Application::instance()->AppRun();
     return 0;
 }
