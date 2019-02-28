@@ -10,11 +10,19 @@
 
 class Application
 {
-public:
 
+public:
+    static Application* instance();
+    void selfInit();
+    DataStorage* dataStorage;
+    DrawManager* drawManager;
+    EventManager* eventManager;
+    EventHandler* eventHandler;
     Application();
     void AppRun();
 
+private:
+    static Application* ex_instance;
 };
 
 #endif // APPLICATION_H
