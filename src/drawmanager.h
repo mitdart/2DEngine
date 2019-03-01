@@ -2,16 +2,16 @@
 #define DRAWMANAGER_H
 #include <SFML/Graphics.hpp>
 
-#include "datastorage.h"
+
 
 
 class DrawManager
 {
 public:
     DrawManager();
-    DataStorage* dataStorage;
-    sf::RenderWindow* window;
-    void DrawTmpText();
+
+    sf::RenderWindow window;
+    void drawObject();
 };
 
 #endif // DRAWMANAGER_H

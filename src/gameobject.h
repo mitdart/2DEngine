@@ -26,6 +26,8 @@ struct Direction
 class GameObject
 {
 public:
+
+
     GameObject();
     std::string name;
     Coordinates coordinate;

@@ -4,15 +4,15 @@
 #include <fstream>
 #include "gameobject.h"
 
+
+
 class DataStorage
 {
 
 public:
 
     DataStorage();
-    std::string AppText = "";
-    std::string TmpText = "";
-    sf::Font font;
+
     std::map<std::string, GameObject> gameObjects;
 
 

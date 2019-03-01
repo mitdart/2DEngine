@@ -14,7 +14,7 @@ private:
 
 public:
 
-    EventHandler* eventHandler;
+
     EventManager();
 
     void Execute();

@@ -1,7 +1,8 @@
 #ifndef EVENTHANDLER_H
 #define EVENTHANDLER_H
 #include <iostream>
-#include "drawmanager.h"
+
+
 #include <SFML/Graphics.hpp>
 
 struct TransformOptions
@@ -14,7 +15,7 @@ class EventHandler
 {
 public:
     EventHandler();
-    DrawManager* drawManager;
+
     void EHClose();
     TransformOptions options;
     void TransformText();

@@ -5,29 +5,43 @@
 Application::Application()
 {
 
+
+
+}
+
+Application* Application::instance()
+{
+    if (!ex_instance)
+    {
+        ex_instance = new Application();
+    }
+
+    return ex_instance;
+
+}
+
+void Application::selfInit()
+{
+    this->drawManager = new DrawManager();
+    this->dataStorage = new DataStorage();
+    this->eventHandler = new EventHandler();
+    this->eventManager = new EventManager();
+
 }
 
 
 
 void Application::AppRun()
 {
-    sf::RenderWindow windoww(sf::VideoMode(1600, 900), "Hackertyper");
+    this->selfInit();
 
-    DataStorage dataStorage;
-    DrawManager drawManager;
-    drawManager.dataStorage = &dataStorage;
-    drawManager.window = &windoww;
-    EventHandler eventHandler;
-    eventHandler.drawManager = &drawManager;
-    EventManager eventManager;
-    eventManager.eventHandler = &eventHandler;
-
-    while(windoww.isOpen())
+    while(this->drawManager->window.isOpen())
     {
-        eventManager.Execute();
-        windoww.clear();
-        drawManager.DrawTmpText();
-        windoww.display();
+        this->eventManager->Execute();
+
+        this->drawManager->drawObject();
+        this->drawManager->window.display();
+
     }
 
 
