@@ -15,7 +15,7 @@ find_package(SFML 2.5.1 COMPONENTS system window graphics network audio)
 
 
 
-set(project_sources main.cpp drawmanager.cpp eventmanager.cpp eventhandler.cpp application.cpp datastorage.cpp gameobject.cpp)
+set(project_sources main.cpp drawmanager.cpp eventmanager.cpp eventhandler.cpp application.cpp datastorage.cpp gameobject.cpp creature.cpp)
 
 
 

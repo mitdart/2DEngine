@@ -5,7 +5,7 @@
 #include "eventhandler.h"
 #include "eventmanager.h"
 #include "application.h"
-#include <map>
+
 
 Application* Application::ex_instance = 0;
 
