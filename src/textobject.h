@@ -7,7 +7,7 @@ class TextObject: public GameObject
 public:
     TextObject(std::string pathFont);
     sf::Font font;
-    std::string text = "poshelVPizdu";
+    std::string text = "text";
     int size = 19;
 
 };

@@ -1,7 +1,7 @@
 #ifndef MOVABLECREATURES_H
 #define MOVABLECREATURES_H
 
-#include <gameobject.h>
+#include "gameobject.h"
 
 struct Speed
 {
