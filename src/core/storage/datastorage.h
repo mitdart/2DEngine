@@ -2,9 +2,9 @@
 #define DATASTORAGE_H
 #include <SFML/Graphics.hpp>
 #include <fstream>
-#include "gameobject.h"
-#include "textobject.h"
-#include "picture.h"
+#include "../objects/gameobject.h"
+#include "../objects/textobject.h"
+#include "../objects/picture.h"
 
 
 

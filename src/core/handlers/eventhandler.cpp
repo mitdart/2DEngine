@@ -1,8 +1,8 @@
 #include <SFML/Graphics.hpp>
 
-#include "drawmanager.h"
+#include "../management/drawmanager.h"
 
-#include "application.h"
+#include "../application.h"
 
 
 

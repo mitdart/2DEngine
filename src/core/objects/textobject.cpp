@@ -1,5 +1,5 @@
 #include "textobject.h"
-#include "drawmanager.h"
+#include "../management/drawmanager.h"
 
 TextObject::TextObject(std::string pathFont)
 {

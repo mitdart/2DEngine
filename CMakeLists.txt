@@ -15,19 +15,20 @@ find_package(SFML 2.5.1 COMPONENTS system window graphics network audio)
 
 
 
-set(project_sources main.cpp drawmanager.cpp eventmanager.cpp eventhandler.cpp application.cpp datastorage.cpp gameobject.cpp
-     textobject.cpp renderer.cpp picture.cpp)
+set(project_sources src/main.cpp
+                    src/core/application.cpp
+                    src/core/handlers/eventhandler.cpp
+                    src/core/management/eventmanager.cpp
+                    src/core/management/drawmanager.cpp
+                    src/core/objects/gameobject.cpp
+                    src/core/objects/renderer.cpp
+                    src/core/objects/picture.cpp
+                    src/core/objects/textobject.cpp
+                    src/core/storage/datastorage.cpp)
 
 
 
-
-
-
-FOREACH(SRC ${project_sources})
-    LIST(APPEND sources "src/${SRC}")
-ENDFOREACH()
-
-add_executable(${PROJECT_NAME} ${sources})
+add_executable(${PROJECT_NAME} ${project_sources})
 
 target_link_libraries (${PROJECT_NAME} sfml-graphics sfml-window sfml-system)
 
