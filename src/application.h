@@ -11,6 +11,7 @@
 class Application
 {
 
+
 public:
     static Application* instance();
     void selfInit();
@@ -18,13 +19,11 @@ public:
     DrawManager* drawManager;
     EventManager* eventManager;
     EventHandler* eventHandler;
-
-
-
     void AppRun();
 
 private:
     Application();
+
     static Application* ex_instance;
 };
 

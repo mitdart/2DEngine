@@ -3,6 +3,9 @@
 #include <SFML/Graphics.hpp>
 #include <fstream>
 #include "gameobject.h"
+#include "textobject.h"
+
+
 
 
 
@@ -16,6 +19,7 @@ public:
     std::map<std::string, GameObject> gameObjects;
 
 
+    //std::vector<GameObject*> objects;
 
 };
 

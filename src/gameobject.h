@@ -1,6 +1,7 @@
 #ifndef GAMEOBJECT_H
 #define GAMEOBJECT_H
 #include <string>
+#include "renderer.h"
 #include <SFML/Graphics.hpp>
 
 
@@ -31,7 +32,7 @@ public:
     std::string name;
     Position coordinate;
     Direction direction;
-
+    Renderer* renderer = 0;
 };
 
 #endif // GAMEOBJECT_H
