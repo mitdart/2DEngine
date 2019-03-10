@@ -20,7 +20,7 @@ void DrawManager::drawAllObjects()
 
     for (auto element : Application::instance() -> dataStorage -> gameObjects)
         {
-            if (element.second->renderer != 0)
+            if (element.second.renderer != 0)
             {
                 //std::cout << element.second.renderer << std::endl;
                 //drawObject(*(element.second).renderer->mesh);

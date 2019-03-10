@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 2.8)
 
 project(Hackertyper2_0)
 
+
 set(SFML_INCLUDE_DIR "SFML/include")
 set(SFML_LIBRARY_DIR "SFML/lib")
 
@@ -31,3 +32,4 @@ add_executable(${PROJECT_NAME} ${sources})
 target_link_libraries (${PROJECT_NAME} sfml-graphics sfml-window sfml-system)
 
 #Hello!Hello!Hello!
+
