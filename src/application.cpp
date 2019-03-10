@@ -24,7 +24,7 @@ void Application::selfInit()
 
     this->eventHandler = new EventHandler();
     this->eventManager = new EventManager();
-    this->dataStorage->gameObjects.insert({"nagibator228",  TextObject("arial.ttf")});
+    this->dataStorage->gameObjects.insert({"nagibator228",  TextObject("arial.ttf")});// <<<<<------ Здесь создаётся локальный экземпляр объекта, потокрый после выполнения selfInit благополучно умирает.
     auto it = this->dataStorage->gameObjects.find("nagibator228");
     it->second.renderer = new Renderer(new sf::Text(static_cast<TextObject&>(it->second).text,
                                                     static_cast<TextObject&>(it->second).font,
@@ -65,7 +65,7 @@ void Application::AppRun()
 
 
         //this->drawManager->drawObject(text);
-        this->drawManager->window.draw(*it->second.renderer->mesh);
+        this->drawManager->window.draw(*it->second.renderer->mesh);// <<<------ Здесь мы обращаемся к указателю на умерший объект, и случается сегфолт.
         this->drawManager->window.display();
     }
 
