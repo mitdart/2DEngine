@@ -7,7 +7,7 @@ class TextObject: public GameObject
 public:
     TextObject(std::string pathFont);
     sf::Font font;
-    std::string text = "text";
+    std::string text = "Welcome! It's a newest version of our engine. It already can be used for simple programs, but it's still unstable.";
     int size = 19;
 
 };

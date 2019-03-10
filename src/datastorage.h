@@ -4,7 +4,7 @@
 #include <fstream>
 #include "gameobject.h"
 #include "textobject.h"
-
+#include "picture.h"
 
 
 
@@ -16,7 +16,7 @@ public:
 
     DataStorage();
 
-    std::map<std::string, GameObject> gameObjects;
+    std::map<std::string, GameObject*> gameObjects;
 
 
     //std::vector<GameObject*> objects;

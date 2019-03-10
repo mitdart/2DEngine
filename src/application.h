@@ -15,6 +15,7 @@ class Application
 public:
     static Application* instance();
     void selfInit();
+    void applicationInit();
     DataStorage* dataStorage;
     DrawManager* drawManager;
     EventManager* eventManager;

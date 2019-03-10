@@ -20,20 +20,11 @@ void DrawManager::drawAllObjects()
 
     for (auto element : Application::instance() -> dataStorage -> gameObjects)
         {
-            if (element.second.renderer != 0)
+            if (element.second->renderer != 0)
             {
-                //std::cout << element.second.renderer << std::endl;
-                //drawObject(*(element.second).renderer->mesh);
-                sf::Font font;
-                font.loadFromFile("arial.ttf");
 
-                sf::Text text("TmpText", font, 20);
+                drawObject(*element.second->renderer->mesh);
 
-                text.setOutlineColor(sf::Color::Red);
-                text.setFillColor(sf::Color::Red);
-
-                text.setPosition(0, 0);
-                window.draw(text);
             }
         };
 
