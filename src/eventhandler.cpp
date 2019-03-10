@@ -1,6 +1,4 @@
-#include "eventhandler.h"
 #include <SFML/Graphics.hpp>
-#include "drawmanager.h"
 #include "application.h"
 
 

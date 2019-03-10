@@ -24,7 +24,7 @@ void Application::selfInit()
 {
     this->drawManager = new DrawManager();
     this->dataStorage = new DataStorage();
-    this->eventHandler = new EventHandler();
+    //this->eventHandler = new EventHandler();
     this->eventManager = new EventManager();
 
 }

@@ -1,6 +1,5 @@
-#include "eventmanager.h"
 #include <SFML/Graphics.hpp>
-#include "eventhandler.h"
+
 #include <iostream>
 #include <algorithm>
 #include "application.h"

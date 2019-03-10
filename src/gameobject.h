@@ -7,7 +7,7 @@
 
 
 
-struct Coordinates
+struct Position
 {
     double x = 0;
     double y = 0;
@@ -25,12 +25,11 @@ struct Direction
 
 class GameObject
 {
+
 public:
-
-
     GameObject();
     std::string name;
-    Coordinates coordinate;
+    Position coordinate;
     Direction direction;
 
 };

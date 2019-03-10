@@ -18,10 +18,13 @@ public:
     DrawManager* drawManager;
     EventManager* eventManager;
     EventHandler* eventHandler;
-    Application();
+
+
+
     void AppRun();
 
 private:
+    Application();
     static Application* ex_instance;
 };
 

@@ -8,13 +8,7 @@
 
 class EventManager
 {
-private:
-
-
-
 public:
-
-
     EventManager();
 
     void Execute();
