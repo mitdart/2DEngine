@@ -1,14 +1,14 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
-#include "core/application.h"
+#include "core/engine.h"
 
 
-Application* Application::ex_instance = 0;
+Engine* Engine::ex_instance = 0;
 
 
 int main()
 {
 
-    Application::instance()->AppRun();
+    //Engine::instance()->AppRun();
     return 0;
 }

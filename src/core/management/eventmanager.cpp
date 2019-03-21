@@ -2,7 +2,7 @@
 
 #include <iostream>
 #include <algorithm>
-#include "../application.h"
+#include "../engine.h"
 
 EventManager::EventManager()
 {
@@ -15,15 +15,15 @@ void EventManager::Execute()
 {
 
     sf::Event event;
-    while(Application::instance()->drawManager->window.pollEvent(event))
+    while(Engine::instance()->drawManager->window.pollEvent(event))
     {
-
+        /*
         auto action = (ActionBinder.find(event.type));
         if (action != ActionBinder.end())
         {
-            (Application::instance()->eventHandler->*action->second)();
+            (Engine::instance()->eventHandler->*action->second)();
         }
-
+        */
     }
 
 }

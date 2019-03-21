@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 2.8)
 
-project(Hackertyper2_0)
+project(2DEngine)
 
 
 set(SFML_INCLUDE_DIR "SFML/include")
@@ -16,15 +16,16 @@ find_package(SFML 2.5.1 COMPONENTS system window graphics network audio)
 
 
 set(project_sources src/main.cpp
-                    src/core/application.cpp
-                    src/core/handlers/eventhandler.cpp
+                    src/application.cpp
+                    src/scripts/picturescript.cpp
+                    src/core/engine.cpp
                     src/core/management/eventmanager.cpp
                     src/core/management/drawmanager.cpp
                     src/core/objects/gameobject.cpp
                     src/core/objects/renderer.cpp
-                    src/core/objects/picture.cpp
-                    src/core/objects/textobject.cpp
-                    src/core/storage/datastorage.cpp)
+                    src/core/objects/basicscript.cpp
+                    src/core/storage/datastorage.cpp
+                    src/core/tools/tools.cpp)
 
 
 

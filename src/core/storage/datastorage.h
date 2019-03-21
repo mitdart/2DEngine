@@ -3,8 +3,7 @@
 #include <SFML/Graphics.hpp>
 #include <fstream>
 #include "../objects/gameobject.h"
-#include "../objects/textobject.h"
-#include "../objects/picture.h"
+
 
 
 

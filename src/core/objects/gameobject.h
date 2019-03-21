@@ -2,6 +2,7 @@
 #define GAMEOBJECT_H
 #include <string>
 #include "renderer.h"
+#include "basicscript.h"
 #include <SFML/Graphics.hpp>
 
 
@@ -18,7 +19,6 @@ struct Direction
 {
     double x;
     double y;
-
 };
 
 
@@ -26,13 +26,14 @@ struct Direction
 
 class GameObject
 {
-
 public:
     GameObject();
     std::string name;
     Position coordinate;
     Direction direction;
     Renderer* renderer = 0;
+    BasicScript* script = 0;
+
 };
 
 #endif // GAMEOBJECT_H
