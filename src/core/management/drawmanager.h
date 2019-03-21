@@ -11,7 +11,11 @@ public:
     DrawManager();
 
     sf::RenderWindow window;
-    void drawObject();
+    void drawObject(sf::Drawable& object);
+    void drawAllObjects();
+
+private:
+
 };
 
 #endif // DRAWMANAGER_H

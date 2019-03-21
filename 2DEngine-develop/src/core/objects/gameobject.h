@@ -1,13 +1,14 @@
 #ifndef GAMEOBJECT_H
 #define GAMEOBJECT_H
 #include <string>
+#include "renderer.h"
 #include <SFML/Graphics.hpp>
 
 
 
 
 
-struct Coordinates
+struct Position
 {
     double x = 0;
     double y = 0;
@@ -25,14 +26,13 @@ struct Direction
 
 class GameObject
 {
+
 public:
-
-
     GameObject();
     std::string name;
-    Coordinates coordinate;
+    Position coordinate;
     Direction direction;
-
+    Renderer* renderer = 0;
 };
 
 #endif // GAMEOBJECT_H

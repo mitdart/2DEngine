@@ -1,20 +1,14 @@
 #ifndef EVENTMANAGER_H
 #define EVENTMANAGER_H
 #include <SFML/Graphics.hpp>
-#include "eventhandler.h"
+#include "../handlers/eventhandler.h"
 #include <functional>
 #include <map>
 
 
 class EventManager
 {
-private:
-
-
-
 public:
-
-
     EventManager();
 
     void Execute();
