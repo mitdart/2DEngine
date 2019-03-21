@@ -26,7 +26,6 @@ public:
 
 private:
     Engine();
-
     static Engine* ex_instance;
 };
 

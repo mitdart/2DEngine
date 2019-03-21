@@ -18,6 +18,7 @@ void EventManager::Execute()
     sf::Event event;
     while(Engine::instance()->drawManager->window.pollEvent(event))
     {
+
         /*
         auto action = (ActionBinder.find(event.type));
         if (action != ActionBinder.end())

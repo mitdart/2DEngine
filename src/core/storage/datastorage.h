@@ -10,16 +10,9 @@
 
 class DataStorage
 {
-
 public:
-
     DataStorage();
-
     std::map<std::string, GameObject*> gameObjects;
-
-
-    //std::vector<GameObject*> objects;
-
 };
 
 #endif // DATASTORAGE_H
