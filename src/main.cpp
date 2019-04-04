@@ -9,6 +9,6 @@ Engine* Engine::ex_instance = 0;
 int main()
 {
 
-    //Engine::instance()->AppRun();
+    Engine::instance()->engineRun();
     return 0;
 }
