@@ -1,5 +1,6 @@
 #include "drawmanager.h"
 #include "../engine.h"
+#include "../engine.cpp"
 #include <SFML/Graphics.hpp>
 
 
@@ -31,4 +32,5 @@ void DrawManager::drawAllObjects()
 void DrawManager::drawObject(sf::Drawable& object)
 {
     window.draw(object);
+    window.draw(ssscript.pictureSprite);
 }
