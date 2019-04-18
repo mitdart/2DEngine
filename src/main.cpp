@@ -3,12 +3,13 @@
 #include "core/engine.h"
 
 
-Engine* Engine::ex_instance = 0;
 
 
 int main()
 {
 
-    //Engine::instance()->AppRun();
+    Application application;
+
+    application.appRun();
     return 0;
 }

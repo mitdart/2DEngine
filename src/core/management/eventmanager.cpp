@@ -5,27 +5,32 @@
 #include "../engine.h"
 #include "eventmanager.h"
 
-EventManager::EventManager()
+
+
+namespace engine
 {
-
-}
-
-
-
-void EventManager::Execute()
-{
-
-    sf::Event event;
-    while(Engine::instance()->drawManager->window.pollEvent(event))
+    EventManager::EventManager()
     {
 
-        /*
-        auto action = (ActionBinder.find(event.type));
-        if (action != ActionBinder.end())
-        {
-            (Engine::instance()->eventHandler->*action->second)();
-        }
-        */
     }
+
+
+
+    void EventManager::catchEvents()
+    {
+
+        sf::Event event;
+        while(Engine::instance()->drawManager->window.pollEvent(event))
+        {
+
+        }
+
+    }
+
+    void EventManager::clearEvents()
+    {
+        catchedEvents.clear();
+    }
+
 
 }
