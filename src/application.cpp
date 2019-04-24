@@ -13,6 +13,7 @@ Application::Application()
 
 void Application::createObjects()
 {
+
     _2DEngine::createObject("picture");
     sf::Texture texture;
     texture.loadFromFile("logo.png");
@@ -21,6 +22,8 @@ void Application::createObjects()
     _2DEngine::findObject("picture")->addComponent<TestScript>();
 
 }
+
+
 
 void Application::appRun()
 {

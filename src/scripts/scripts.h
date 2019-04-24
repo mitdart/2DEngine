@@ -1,5 +1,5 @@
-#ifndef PICTURESCRIPT_H
-#define PICTURESCRIPT_H
+#ifndef SCRIPTS_H
+#define SCRIPTS_H
 #include "../core/object_components/basicscript.h"
 #include "SFML/Graphics.hpp"
 
@@ -10,4 +10,4 @@ public:
     void start();
 };
 
-#endif // PICTURESCRIPT_H
+#endif // SCRIPTS_H
