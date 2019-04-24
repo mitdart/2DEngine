@@ -14,6 +14,8 @@ namespace engine
         void catchEvents();
         void clearEvents();
 
+        std::vector<sf::Event> getEventsThisType(sf::Event::EventType eventType);
+
     private:
 
         std::vector<sf::Event>  catchedEvents;

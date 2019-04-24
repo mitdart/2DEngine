@@ -60,14 +60,10 @@ namespace engine
     template <typename ComponentType>
     void GameObject::addComponent()
     {
-        std::cout << "there1" << std::endl;
         ComponentType* component = new ComponentType;
-        std::cout << "there2" << std::endl;
+
         component->componentName = typeid(ComponentType).name();
-        std::cout << "there3" << std::endl;
-        std::cout <<"1" <<  components.size() << std::endl;
         components.push_back(component);
-        std::cout << "there4" << std::endl;
 
         if (std::is_base_of<BasicScript, ComponentType>())
         {

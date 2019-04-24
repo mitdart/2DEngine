@@ -5,7 +5,7 @@
 
 
 
-namespace engineY
+namespace _2DEngine
 {
     using namespace engine;
     void createObject(std::string name);

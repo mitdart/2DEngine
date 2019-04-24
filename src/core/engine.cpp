@@ -31,9 +31,11 @@ namespace engine
 
     void Engine::engineRun()
     {
-
-        logicsManager->updateLogics();
-        drawManager->drawAllObjects();
+        while (drawManager->getWindow()->isOpen())
+        {
+            logicsManager->updateLogics();
+            drawManager->drawAllObjects();
+        }
 
     }
 }

@@ -3,17 +3,16 @@
 #include "../engine.h"
 #include <iterator>
 
-namespace engineY
+
+
+
+namespace _2DEngine
 {
     void createObject(std::string name)
     {
         if(findObject(name) == 0)
         {
-            GameObject* newObject = new GameObject(name);
-            std::cout << newObject << std::endl;
-            Engine::instance()->dataStorage->gameObjects.insert({name, newObject});
-            auto iterator = Engine::instance()->dataStorage->gameObjects.find(name);
-            std::cout << iterator->first << " " << iterator->second << std::endl;
+            Engine::instance()->dataStorage->gameObjects[name] = new GameObject(name);
         }
         else
         {

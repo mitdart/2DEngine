@@ -3,7 +3,7 @@
 
 namespace engine
 {
-    void Renderer::draw(sf::RenderWindow& window)
+    void Renderer::draw(sf::RenderWindow* window)
     {
         Engine::instance()->drawManager->drawObject(sprite);
     }

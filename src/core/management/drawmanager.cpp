@@ -8,15 +8,16 @@
 
 namespace engine
 {
-    DrawManager::DrawManager():window(sf::VideoMode(1600, 900), "Example")
+    DrawManager::DrawManager()//: window(sf::VideoMode(1600, 900), "Example")
     {
+        window = new sf::RenderWindow(sf::VideoMode(1600, 900), "Example");
     }
 
 
 
     void DrawManager::drawAllObjects()
     {
-        window.clear();
+        window->clear();
 
         for (auto element : Engine::instance() -> drawManager -> allRenderers)
             {
@@ -25,14 +26,17 @@ namespace engine
 
             };
 
-        window.display();
+        window->display();
     }
 
-
+    sf::RenderWindow* DrawManager::getWindow()
+    {
+        return window;
+    }
 
     void DrawManager::drawObject(sf::Drawable& object)
     {
-        window.draw(object);
+        window->draw(object);
     }
 
 

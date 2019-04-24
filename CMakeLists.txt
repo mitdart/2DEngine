@@ -25,6 +25,7 @@ set(project_sources src/main.cpp
                     src/core/objects/gameobject.cpp
                     src/core/storage/datastorage.cpp
                     src/core/tools/tools.cpp
+                    src/core/tools/input.cpp
                     src/core/object_components/gameobjectcomponent.cpp
                     src/core/object_components/basicscript.cpp
                     src/core/object_components/renderer.cpp

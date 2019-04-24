@@ -12,7 +12,8 @@ namespace engine
     public:
         DrawManager();
 
-        sf::RenderWindow window;
+        sf::RenderWindow* getWindow();
+
         void drawObject(sf::Drawable& object);
         void drawAllObjects();
         std::vector<Renderer*> allRenderers;
@@ -21,7 +22,7 @@ namespace engine
         void removeRenderer(Renderer* renderer);
 
     private:
-
+        sf::RenderWindow* window;
     };
 }
 
