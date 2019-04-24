@@ -7,14 +7,14 @@
 enum KeyCode {
     W = sf::Keyboard::Key::W,
     A = sf::Keyboard::Key::A,
-    S = sf::Keyboard::Key::S, 
+    S = sf::Keyboard::Key::S,
     D = sf::Keyboard::Key::D,
     Mouse_1 = sf::Mouse::Left,
     Space = sf::Keyboard::Key::Space
 };
-
 namespace engine
 {
+
     class Input
     {
      public:

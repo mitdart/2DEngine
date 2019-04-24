@@ -1,7 +1,7 @@
 #ifndef APPLICATION_H
 #define APPLICATION_H
 #include "core/engine.h"
-#include "scripts/picturescript.h"
+
 
 
 

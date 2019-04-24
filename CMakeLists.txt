@@ -17,7 +17,7 @@ find_package(SFML 2.5.1 COMPONENTS system window graphics network audio)
 
 set(project_sources src/main.cpp
                     src/application.cpp
-                    src/scripts/picturescript.cpp
+                    src/scripts/scripts.cpp
                     src/core/engine.cpp
                     src/core/management/eventmanager.cpp
                     src/core/management/drawmanager.cpp
