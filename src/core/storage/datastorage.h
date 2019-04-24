@@ -7,12 +7,13 @@
 
 
 
-
-class DataStorage
+namespace engine
 {
-public:
-    DataStorage();
-    std::map<std::string, GameObject*> gameObjects;
-};
-
+    class DataStorage
+    {
+    public:
+        DataStorage();
+        std::map<std::string, GameObject*> gameObjects;
+    };
+}
 #endif // DATASTORAGE_H

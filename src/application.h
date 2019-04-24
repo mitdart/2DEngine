@@ -7,10 +7,12 @@
 
 
 
-class application
+class Application
 {
 public:
-    application();
+    Application();
+    void createObjects();
+    void appRun();
 };
 
 

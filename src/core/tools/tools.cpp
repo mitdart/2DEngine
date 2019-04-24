@@ -1,15 +1,42 @@
 #include "tools.h"
+#include <iostream>
+#include "../engine.h"
+#include <iterator>
 
 
-void engineY::createObject()
-{}
 
 
-void engineY::destroyObject()
-{}
+namespace _2DEngine
+{
+    void createObject(std::string name)
+    {
+        if(findObject(name) == 0)
+        {
+            Engine::instance()->dataStorage->gameObjects[name] = new GameObject(name);
+        }
+        else
+        {
+            std::cout<< "Object with same name exists" << std::endl;
+        }
+    }
 
 
-GameObject* engineY::findObject()
-{}
+    void deleteObject(std::string name)
+    {
+        if(findObject(name) != 0)
+            Engine::instance()->dataStorage->gameObjects.erase(name);
+    }
 
+    void deleteObject(GameObject* object)
+    {
+            Engine::instance()->dataStorage->gameObjects.erase(object->name);
+    }
+
+    GameObject* findObject(std::string name)
+    {
+
+        return Engine::instance()->dataStorage->gameObjects[name];
+
+    }
+}
 

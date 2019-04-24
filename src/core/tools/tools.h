@@ -1,12 +1,18 @@
 #ifndef TOOLS_H
 #define TOOLS_H
-#include "../engine.h"
+#include "../objects/gameobject.h"
+#include <string>
 
-namespace engineY
+
+
+
+namespace _2DEngine
 {
-    void createObject();
-    void destroyObject();
-    GameObject* findObject();
+    using namespace engine;
+    void createObject(std::string name);
+    void deleteObject(std::string name);
+    void deleteObject(GameObject* object);
+    GameObject* findObject(std::string name);
 
 }
 
