@@ -5,14 +5,12 @@
 
 namespace engine
 {
+    class GameObject;
+
     class GameObjectComponent
     {
     public:
-
-        class GameObject;
-
         GameObjectComponent();
-
         std::string componentName = "";
         GameObject* parentObject = 0;
 

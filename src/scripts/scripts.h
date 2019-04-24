@@ -1,13 +1,19 @@
-#ifndef SCRIPTS_H
-#define SCRIPTS_H
+
+#ifndef PICTURESCRIPT_H
+#define PICTURESCRIPT_H
+
+
 #include "../core/object_components/basicscript.h"
+
 #include "SFML/Graphics.hpp"
 
 class TestScript : public engine::BasicScript
 {
 public:
+
     void update();
     void start();
+
 };
 
-#endif // SCRIPTS_H
+#endif // PICTURESCRIPT_H

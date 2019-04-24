@@ -7,6 +7,16 @@
 
 namespace engine
 {
+
+    struct WindowSettings
+    {
+        std::string name;
+        int width = 1440;
+        int height = 800;
+    };
+
+    const WindowSettings settings;
+
     class DrawManager
     {
     public:

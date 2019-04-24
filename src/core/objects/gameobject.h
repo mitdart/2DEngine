@@ -39,6 +39,8 @@ namespace engine
         Direction direction;
         std::vector<GameObjectComponent*> components;
 
+        void setPosition(int x, int y);
+
         template <typename ComponentType>
         void addComponent();
 
@@ -63,6 +65,7 @@ namespace engine
         ComponentType* component = new ComponentType;
 
         component->componentName = typeid(ComponentType).name();
+        component->parentObject = this;
         components.push_back(component);
 
         if (std::is_base_of<BasicScript, ComponentType>())

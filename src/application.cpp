@@ -14,12 +14,19 @@ Application::Application()
 void Application::createObjects()
 {
 
-    _2DEngine::createObject("picture");
-    sf::Texture texture;
-    texture.loadFromFile("logo.png");
-    _2DEngine::findObject("picture")->addComponent<Renderer>();
-    _2DEngine::findObject("picture")->getComponent<Renderer>()->setSprite(texture);
-    _2DEngine::findObject("picture")->addComponent<TestScript>();
+    _2DEngine::createObject("player");
+    sf::Texture playerTexture;
+    playerTexture.loadFromFile("player.png");
+    _2DEngine::findObject("player")->addComponent<Renderer>();
+    _2DEngine::findObject("player")->getComponent<Renderer>()->setSprite(playerTexture);
+    _2DEngine::findObject("player")->addComponent<TestScript>();
+
+    _2DEngine::createObject("enemyFirst");
+    sf::Texture enemyFirstTexture;
+    enemyFirstTexture.loadFromFile("enemy.png");
+    _2DEngine::findObject("enemyFirst")->addComponent<Renderer>();
+    _2DEngine::findObject("enemyFirst")->getComponent<Renderer>()->setSprite(enemyFirstTexture);
+
 
 }
 

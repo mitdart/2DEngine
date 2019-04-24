@@ -24,6 +24,7 @@ namespace engine
     {
         for (auto script : notStartedScripts)
             script->start();
+        notStartedScripts.clear();
     }
 
     void LogicsManager::updateAllScripts()

@@ -10,7 +10,7 @@ namespace engine
 {
     DrawManager::DrawManager()//: window(sf::VideoMode(1600, 900), "Example")
     {
-        window = new sf::RenderWindow(sf::VideoMode(1600, 900), "Example");
+        window = new sf::RenderWindow(sf::VideoMode(settings.width, settings.height), "Example");
     }
 
 
@@ -49,8 +49,6 @@ namespace engine
     {
         allRenderers.erase(remove(allRenderers.begin(), allRenderers.end(), renderer), allRenderers.end());
     }
-
-
 
 
 }

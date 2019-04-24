@@ -5,6 +5,7 @@ namespace engine
 {
     void Renderer::draw(sf::RenderWindow* window)
     {
+        sprite.setPosition(parentObject->coordinate.x, parentObject->coordinate.y);
         Engine::instance()->drawManager->drawObject(sprite);
     }
 
