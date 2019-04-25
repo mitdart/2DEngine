@@ -4,10 +4,22 @@
 namespace engine
 {
 
-    GameObject::GameObject()
-    {
+    GameObject::~GameObject()
+        {
+            for (auto component : components)
+            {
+                if (component->name == typeid(Renderer).name())
+                {
+                    unregisterObjectRenderer(component);
+                    continue;
+                }
 
-    }
+                unregisterObjectScript(component);
+            }
+
+            components.clear();
+        };
+
 
     void GameObject::setPosition(int x, int y)
     {

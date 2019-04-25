@@ -30,7 +30,7 @@ namespace engine
     class GameObject
     {
     public:
-
+        ~GameObject();
         GameObject();
         GameObject(std::string m_name);
 
@@ -64,7 +64,7 @@ namespace engine
     {
         ComponentType* component = new ComponentType;
 
-        component->componentName = typeid(ComponentType).name();
+        component->name = typeid(ComponentType).name();
         component->parentObject = this;
         components.push_back(component);
 
@@ -84,7 +84,7 @@ namespace engine
     ComponentType* GameObject::getComponent()
     {
        for (auto component : components)
-           if (component->componentName == typeid(ComponentType).name())
+           if (component->name == typeid(ComponentType).name())
            {
                ComponentType* wired = static_cast<ComponentType*>(component);
                return wired;
@@ -95,7 +95,7 @@ namespace engine
     bool GameObject::hasComponent()
     {
        for (auto component : components)
-           if (component->componentName == typeid(ComponentType).name())
+           if (component->name == typeid(ComponentType).name())
            {
                return true;
            }

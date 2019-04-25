@@ -11,7 +11,7 @@ namespace engine
     {
     public:
         GameObjectComponent();
-        std::string componentName = "";
+        std::string name = "";
         GameObject* parentObject = 0;
 
     };
