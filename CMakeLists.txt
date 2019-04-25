@@ -17,17 +17,19 @@ find_package(SFML 2.5.1 COMPONENTS system window graphics network audio)
 
 set(project_sources src/main.cpp
                     src/application.cpp
-                    src/scripts/picturescript.cpp
+                    src/scripts/scripts.cpp
                     src/core/engine.cpp
                     src/core/management/eventmanager.cpp
                     src/core/management/drawmanager.cpp
+                    src/core/management/logicsmanager.cpp
                     src/core/objects/gameobject.cpp
-                    src/core/objects/renderer.cpp
-                    src/core/objects/basicscript.cpp
                     src/core/storage/datastorage.cpp
-                    src/core/tools/tools.cpp)
-
-
+                    src/core/tools/tools.cpp
+                    src/core/tools/input.cpp
+                    src/core/object_components/gameobjectcomponent.cpp
+                    src/core/object_components/basicscript.cpp
+                    src/core/object_components/renderer.cpp
+                    )
 
 add_executable(${PROJECT_NAME} ${project_sources})
 

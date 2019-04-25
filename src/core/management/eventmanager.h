@@ -4,28 +4,24 @@
 #include <functional>
 #include <map>
 
-
-class EventManager
+namespace engine
 {
-public:
-    EventManager();
+    class EventManager
+    {
+    public:
+        EventManager();
 
-    void Execute();
+        void catchEvents();
+        void clearEvents();
 
-private:
-    /*
-    typedef void (EventHandler::*Action)(void);
+        std::vector<sf::Event> getEventsThisType(sf::Event::EventType eventType);
 
-    std::map<int, Action> ActionBinder = {{sf::Event::KeyPressed, &EventHandler::TransformText},
-                                          {sf::Event::Closed , &EventHandler::EHClose},
-                                          {sf::Event::KeyReleased, &EventHandler::pass}};
-    */
+    private:
 
+        std::vector<sf::Event>  catchedEvents;
 
-
-
-};
-
+    };
+}
 
 #endif // EVENTMANAGER_H
 

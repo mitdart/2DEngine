@@ -2,36 +2,40 @@
 #include <iostream>
 #include <iterator>
 
-
-Engine::Engine()
+namespace engine
 {
-}
 
-Engine* Engine::instance()
-{
-    if (!ex_instance)
+    Engine* Engine::ex_instance = 0;
+
+    Engine::Engine()
     {
-        ex_instance = new Engine();
     }
 
-    return ex_instance;
-
-}
-void Engine::selfInit()
-{
-    this->drawManager = new DrawManager();
-    this->dataStorage = new DataStorage();
-    this->eventManager = new EventManager();
-
-}
-
-void Engine::engineRun()
-{
-    this->selfInit();
-    while(this->drawManager->window.isOpen())
+    Engine* Engine::instance()
     {
-        this->eventManager->Execute();
-        this->drawManager->drawAllObjects();
+        if (!ex_instance)
+        {
+            ex_instance = new Engine();
+        }
+
+        return ex_instance;
+
+    }
+    void Engine::selfInit()
+    {
+        this->drawManager = new DrawManager();
+        this->dataStorage = new DataStorage();
+        this->logicsManager = new LogicsManager();
+
     }
 
+    void Engine::engineRun()
+    {
+        while (drawManager->getWindow()->isOpen())
+        {
+            logicsManager->updateLogics();
+            drawManager->drawAllObjects();
+        }
+
+    }
 }

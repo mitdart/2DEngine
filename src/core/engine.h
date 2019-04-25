@@ -4,30 +4,35 @@
 #include "storage/datastorage.h"
 #include "management/drawmanager.h"
 #include "management/eventmanager.h"
+#include "management/logicsmanager.h"
 #include "tools/tools.h"
 #include "../application.h"
 
+using engine::Renderer;
+using engine::BasicScript;
 
 
 
-
-
-class Engine
+namespace engine
 {
 
 
-public:
-    static Engine* instance();
-    void selfInit();
-    DataStorage* dataStorage;
-    DrawManager* drawManager;
-    EventManager* eventManager;
-    void engineRun();
+    class Engine
+    {
 
-private:
-    Engine();
-    static Engine* ex_instance;
-};
 
+    public:
+        static Engine* instance();
+        void selfInit();
+        DataStorage* dataStorage;
+        DrawManager* drawManager;
+        LogicsManager* logicsManager;
+        void engineRun();
+
+    private:
+        Engine();
+        static Engine* ex_instance;
+    };
+}
 
 #endif // ENGINE_H
