@@ -15,7 +15,7 @@ enum KeyCode {
 namespace engine
 {
 
-    class Input
+    class KeyboardInput
     {
      public:
         static bool getKey(KeyCode key);
@@ -29,7 +29,7 @@ namespace engine
         static std::map<KeyCode, bool> isPressedOnce;
 
      private:
-        Input();
+        KeyboardInput();
         static KeyCode convertFromSfmlKey(sf::Keyboard::Key key);
     };
 }
