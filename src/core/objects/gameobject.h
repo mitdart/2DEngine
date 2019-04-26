@@ -55,8 +55,6 @@ namespace engine
         void unregisterObjectScript(GameObjectComponent* script);
         void unregisterObjectRenderer(GameObjectComponent* renderer);
 
-
-
     };
 
     template <typename ComponentType>

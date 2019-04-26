@@ -36,6 +36,8 @@ void TestScript::update()
 
 }
 
+
+
 void TestScript::start()
  {
         parentObject->setPosition(600, 0);
