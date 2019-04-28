@@ -26,7 +26,7 @@ void Application::createObjects()
     enemyFirstTexture.loadFromFile("enemy.png");
     _2DEngine::findObject("enemyFirst")->addComponent<Renderer>();
     _2DEngine::findObject("enemyFirst")->getComponent<Renderer>()->setSprite(enemyFirstTexture);
-
+    //music.play();//воспроизводим музыку
 
 }
 

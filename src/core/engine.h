@@ -1,6 +1,7 @@
 #ifndef ENGINE_H
 #define ENGINE_H
 #include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
 #include "storage/datastorage.h"
 #include "management/drawmanager.h"
 #include "management/eventmanager.h"

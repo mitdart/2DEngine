@@ -7,6 +7,13 @@
 
 #include "SFML/Graphics.hpp"
 
+class EmemyScript : public engine::BasicScript
+{
+public:
+    void update();
+    void start();
+};
+
 class TestScript : public engine::BasicScript
 {
 public:
