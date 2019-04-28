@@ -11,7 +11,7 @@
 
 using engine::Renderer;
 using engine::BasicScript;
-
+using engine::RectCollider;
 
 
 namespace engine

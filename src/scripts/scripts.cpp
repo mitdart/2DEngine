@@ -8,30 +8,30 @@
 
 void TestScript::update()
 {
-    if (_2DEngine::Input::getKey(KeyCode::A))
+    if (_2DEngine::KeyboardInput::getKey(KeyCode::A))
     {
         std::cout << "Pressed Key: A" << std::endl;
         parentObject->coordinate.x -= 1;
-        std::cout << "Position.X: "<< _2DEngine::findObject("player")->getComponent<Renderer>()->sprite.getPosition().x << std::endl;
+        std::cout << "Position.X: "<< parentObject->coordinate.x << std::endl;
     }
-    if (_2DEngine::Input::getKey(KeyCode::D))
+    if (_2DEngine::KeyboardInput::getKey(KeyCode::D))
     {
         std::cout << "Pressed Key: D" << std::endl;
         parentObject->coordinate.x += 1;
-        std::cout << "Position.X: "<< _2DEngine::findObject("player")->getComponent<Renderer>()->sprite.getPosition().x << std::endl;
+        std::cout << "Position.X: "<< parentObject->coordinate.x << std::endl;
     }
 
-    if (_2DEngine::Input::getKey(KeyCode::W))
+    if (_2DEngine::KeyboardInput::getKey(KeyCode::W))
     {
         std::cout << "Pressed Key: W" << std::endl;
         parentObject->coordinate.y -= 1;
-        std::cout << "Position.Y: "<< _2DEngine::findObject("player")->getComponent<Renderer>()->sprite.getPosition().y << std::endl;
+        std::cout << "Position.Y: "<< parentObject->coordinate.y << std::endl;
     }
-    if (_2DEngine::Input::getKey(KeyCode::S))
+    if (_2DEngine::KeyboardInput::getKey(KeyCode::S))
     {
         std::cout << "Pressed Key: W" << std::endl;
         parentObject->coordinate.y += 1;
-        std::cout << "Position.Y: "<< _2DEngine::findObject("player")->getComponent<Renderer>()->sprite.getPosition().y << std::endl;
+        std::cout << "Position.Y: "<< parentObject->coordinate.y << std::endl;
     }
 
 }
