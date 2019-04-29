@@ -27,8 +27,6 @@ public:
 
 void TestScript::update()
 {
-    parentObject->getComponent<Renderer>()->sprite.setPosition(parentObject->position.x + 137,
-                                                                                  parentObject->position.y + 15);
     if (_2DEngine::KeyboardInput::getKey(KeyCode::A))
     {
         parentObject->position.x -= 200 * _2DEngine::Time::deltaTime;
