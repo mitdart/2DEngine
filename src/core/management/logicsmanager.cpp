@@ -1,5 +1,5 @@
 #include "logicsmanager.h"
-
+#include "../engine.h"
 
 namespace engine
 {
@@ -11,6 +11,7 @@ namespace engine
 
     void LogicsManager::updateLogics()
     {
+        Time::updateTime;
 
         eventManager->catchEvents();
 

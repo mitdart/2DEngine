@@ -80,7 +80,7 @@ namespace engine
         };
 
         for (auto& line : lines)
-            line.position = sf::Vector2f(line.position.x + collider->parentObject->coordinate.x, line.position.y + collider->parentObject->coordinate.y);
+            line.position = sf::Vector2f(line.position.x + collider->parentObject->position.x, line.position.y + collider->parentObject->position.y);
 
         Engine::instance()->drawManager->getWindow()->draw(lines, 8, sf::Lines);
     }

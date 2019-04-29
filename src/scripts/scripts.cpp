@@ -2,7 +2,6 @@
 #include "../core/tools/tools.h"
 #include "../core/tools/input.h"
 #include "../core/engine.h"
-#include "../core/object_components/renderer.h"
 #include <iostream>
 
 
@@ -10,28 +9,20 @@ void TestScript::update()
 {
     if (_2DEngine::KeyboardInput::getKey(KeyCode::A))
     {
-        std::cout << "Pressed Key: A" << std::endl;
-        parentObject->coordinate.x -= 1;
-        std::cout << "Position.X: "<< parentObject->coordinate.x << std::endl;
+        parentObject->position.x -= 1;
     }
     if (_2DEngine::KeyboardInput::getKey(KeyCode::D))
     {
-        std::cout << "Pressed Key: D" << std::endl;
-        parentObject->coordinate.x += 1;
-        std::cout << "Position.X: "<< parentObject->coordinate.x << std::endl;
+        parentObject->position.x += 1;
     }
 
     if (_2DEngine::KeyboardInput::getKey(KeyCode::W))
     {
-        std::cout << "Pressed Key: W" << std::endl;
-        parentObject->coordinate.y -= 1;
-        std::cout << "Position.Y: "<< parentObject->coordinate.y << std::endl;
+        parentObject->position.y -= 1;
     }
     if (_2DEngine::KeyboardInput::getKey(KeyCode::S))
     {
-        std::cout << "Pressed Key: W" << std::endl;
-        parentObject->coordinate.y += 1;
-        std::cout << "Position.Y: "<< parentObject->coordinate.y << std::endl;
+        parentObject->position.y += 1;
     }
 
 }
@@ -39,5 +30,11 @@ void TestScript::update()
 void TestScript::start()
  {
         parentObject->setPosition(600, 0);
-
+        sf::Texture playerTexture;
+        playerTexture.loadFromFile("player.png");
+        parentObject->addComponent<Renderer>();
+        parentObject->getComponent<Renderer>()->setSprite(playerTexture);
+        parentObject->addComponent<RectCollider>();
+        parentObject->getComponent<RectCollider>()->setCollider(-100, -100, 100, 100);
+        parentObject->getComponent<RectCollider>()->display();
  }
