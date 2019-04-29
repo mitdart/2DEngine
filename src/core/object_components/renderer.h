@@ -1,6 +1,7 @@
 #ifndef RENDERER_H
 #define RENDERER_H
 #include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
 #include "gameobjectcomponent.h"
 
 namespace engine
@@ -16,6 +17,8 @@ namespace engine
         void setTexture(sf::Texture& newTexture);
 
     };
+
+
 }
 
 

@@ -5,7 +5,8 @@ namespace engine
 {
     void Renderer::draw(sf::RenderWindow* window)
     {
-        sprite.setPosition(parentObject->coordinate.x, parentObject->coordinate.y);
+        sf::Vector2u textureSize = texture.getSize();
+        sprite.setPosition(parentObject->coordinate.x - textureSize.x/2, parentObject->coordinate.y - textureSize.y/2);
         Engine::instance()->drawManager->drawObject(sprite);
     }
 

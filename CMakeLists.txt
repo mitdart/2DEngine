@@ -29,6 +29,7 @@ set(project_sources src/main.cpp
                     src/core/object_components/gameobjectcomponent.cpp
                     src/core/object_components/basicscript.cpp
                     src/core/object_components/renderer.cpp
+                    src/core/object_components/rectcollider.cpp
                     )
 
 add_executable(${PROJECT_NAME} ${project_sources})
