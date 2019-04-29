@@ -22,14 +22,17 @@ set(project_sources src/main.cpp
                     src/core/management/eventmanager.cpp
                     src/core/management/drawmanager.cpp
                     src/core/management/logicsmanager.cpp
+                    src/core/management/physicsmanager.cpp
                     src/core/objects/gameobject.cpp
                     src/core/storage/datastorage.cpp
                     src/core/tools/tools.cpp
                     src/core/tools/input.cpp
+                    src/core/tools/time.cpp
                     src/core/object_components/gameobjectcomponent.cpp
                     src/core/object_components/basicscript.cpp
                     src/core/object_components/renderer.cpp
                     src/core/object_components/rectcollider.cpp
+                    src/core/object_components/physicalbody.cpp
                     )
 
 add_executable(${PROJECT_NAME} ${project_sources})

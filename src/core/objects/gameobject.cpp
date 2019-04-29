@@ -23,8 +23,8 @@ namespace engine
 
     void GameObject::setPosition(int x, int y)
     {
-        coordinate.x = x;
-        coordinate.y = y;
+        position = {x, y};
+
 
     }
 
