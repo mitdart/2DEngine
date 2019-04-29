@@ -16,4 +16,13 @@ public:
 
 };
 
+class EnemyScript : public engine::BasicScript
+{
+public:
+    double timeCounter = 0;
+    void update();
+    void start();
+
+};
+
 #endif // PICTURESCRIPT_H

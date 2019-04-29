@@ -20,10 +20,8 @@ void Application::createObjects()
 
     //creation enemy object
     _2DEngine::createObject("enemyFirst");
-    sf::Texture enemyFirstTexture;
-    enemyFirstTexture.loadFromFile("enemy.png");
-    _2DEngine::findObject("enemyFirst")->addComponent<Renderer>();
-    _2DEngine::findObject("enemyFirst")->getComponent<Renderer>()->setSprite(enemyFirstTexture);
+    _2DEngine::findObject("enemyFirst")->addComponent<EnemyScript>();
+
 
 
 }

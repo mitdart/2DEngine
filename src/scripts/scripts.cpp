@@ -39,3 +39,25 @@ void TestScript::start()
         parentObject->getComponent<RectCollider>()->setCollider(-100, -100, 100, 100);
         parentObject->getComponent<RectCollider>()->display();
  }
+
+
+void EnemyScript::update()
+{
+    if(parentObject->position.x  < 600)
+    {
+        parentObject->position.x += 100 * _2DEngine::Time::deltaTime;
+        timeCounter += _2DEngine::Time::deltaTime;
+    } else
+    {
+        std::cout << timeCounter << std::endl;
+    }
+}
+
+void EnemyScript::start()
+ {
+    parentObject->setPosition(20, 20);
+    sf::Texture enemyFirstTexture;
+    enemyFirstTexture.loadFromFile("enemy.png");
+    parentObject->addComponent<Renderer>();
+    parentObject->getComponent<Renderer>()->setSprite(enemyFirstTexture);
+ }
