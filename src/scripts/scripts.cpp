@@ -12,12 +12,18 @@ void TestScript::update()
     {
         std::cout << "Pressed Key: A" << std::endl;
         parentObject->coordinate.x -= 1;
+        int justForFun = parentObject->coordinate.x;
+        justForFun %=  2;
+        parentObject->getComponent<Renderer>()->sprite.setTextureRect(sf::IntRect(45*(justForFun+1), 50, -35, 50));
         std::cout << "Position.X: "<< parentObject->coordinate.x << std::endl;
     }
     if (_2DEngine::KeyboardInput::getKey(KeyCode::D))
     {
         std::cout << "Pressed Key: D" << std::endl;
         parentObject->coordinate.x += 1;
+        int justForFun = parentObject->coordinate.x;
+        justForFun %=  2;
+        parentObject->getComponent<Renderer>()->sprite.setTextureRect(sf::IntRect(10*(justForFun+1), 50, 35, 50));
         std::cout << "Position.X: "<< parentObject->coordinate.x << std::endl;
     }
 
