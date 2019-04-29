@@ -7,8 +7,10 @@
 #include "management/logicsmanager.h"
 #include "management/physicsmanager.h"
 #include "tools/tools.h"
-#include "../application.h"
 #include "tools/time.h"
+
+#include "../application.h"
+
 
 
 using engine::Renderer;
