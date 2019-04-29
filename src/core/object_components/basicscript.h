@@ -9,7 +9,7 @@ namespace engine
     public:
         virtual void update() = 0;
         virtual void start() = 0;
-
+        virtual void collide() = 0;
 
     };
 }

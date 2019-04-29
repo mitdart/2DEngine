@@ -6,8 +6,13 @@
 #include "management/drawmanager.h"
 #include "management/eventmanager.h"
 #include "management/logicsmanager.h"
+#include "management/physicsmanager.h"
 #include "tools/tools.h"
+#include "tools/time.h"
+#include "tools/input.h"
 #include "../application.h"
+
+
 
 using engine::Renderer;
 using engine::BasicScript;

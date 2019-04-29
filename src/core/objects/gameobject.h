@@ -12,20 +12,6 @@
 
 namespace engine
 {
-    struct Position
-    {
-        double x = 0;
-        double y = 0;
-    };
-
-    struct Direction
-    {
-        double x;
-        double y;
-    };
-
-
-
 
     class GameObject
     {
@@ -35,8 +21,8 @@ namespace engine
         GameObject(std::string m_name);
 
         std::string name;
-        Position coordinate;
-        Direction direction;
+        sf::Vector2f position;
+        sf::Vector2f direction;
         std::vector<GameObjectComponent*> components;
 
         void setPosition(int x, int y);

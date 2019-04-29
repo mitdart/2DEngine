@@ -36,6 +36,7 @@ namespace engine
         {
             logicsManager->updateLogics();
             drawManager->drawAllObjects();
+            Time::updateTime();
         }
 
     }
