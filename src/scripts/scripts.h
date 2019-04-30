@@ -12,6 +12,7 @@ public:
     void update();
     void start();
     void collide(){}
+    std::vector<sf::Texture> animation;
 };
 
 class EnemyScript : public engine::BasicScript
@@ -27,7 +28,7 @@ public:
 
 void TestScript::update()
 {
-    parentObject->getComponent<Renderer>()->sprite.setTextureRect(sf::IntRect(15, 137, 33, 35));
+
     if (_2DEngine::KeyboardInput::getKey(KeyCode::A))
     {
         parentObject->position.x -= 300 * _2DEngine::Time::deltaTime;
@@ -37,8 +38,9 @@ void TestScript::update()
         parentObject->position.x += 300 * _2DEngine::Time::deltaTime;
         timeCounter += _2DEngine::Time::deltaTime;
         int spriteCounter = timeCounter*16;
-        parentObject->getComponent<Renderer>()->sprite.setTextureRect(sf::IntRect(15+33*(spriteCounter), 137, 33, 35));
-        if (timeCounter > 0.5)
+        parentObject->getComponent<Renderer>()->setSprite(animation[spriteCounter]);
+
+        if (timeCounter > 0.44)
         {
             timeCounter = 0;
         }
@@ -60,10 +62,26 @@ void TestScript::start()
  {
         parentObject->setPosition(600, 0);
         sf::Texture playerTexture;
-        playerTexture.loadFromFile("sprites/all.png");
+        playerTexture.loadFromFile("sprites/1.png");
+        animation.push_back(playerTexture);
+        playerTexture.loadFromFile("sprites/2.png");
+        animation.push_back(playerTexture);
+        playerTexture.loadFromFile("sprites/3.png");
+        animation.push_back(playerTexture);
+        playerTexture.loadFromFile("sprites/4.png");
+        animation.push_back(playerTexture);
+        playerTexture.loadFromFile("sprites/5.png");
+        animation.push_back(playerTexture);
+        playerTexture.loadFromFile("sprites/6.png");
+        animation.push_back(playerTexture);
+        playerTexture.loadFromFile("sprites/7.png");
+        animation.push_back(playerTexture);
+        playerTexture.loadFromFile("sprites/8.png");
+        animation.push_back(playerTexture);
+
         parentObject->addComponent<Renderer>();
-        parentObject->getComponent<Renderer>()->setSprite(playerTexture);
-        parentObject->getComponent<Renderer>()->sprite.setTextureRect(sf::IntRect(15, 137, 33, 35));
+        parentObject->getComponent<Renderer>()->setSprite(animation[0]);
+        //parentObject->getComponent<Renderer>()->sprite.setTextureRect(sf::IntRect(15, 137, 33, 35));
 
         parentObject->addComponent<RectCollider>();
         parentObject->getComponent<RectCollider>()->setCollider(-100, -100, 100, 100);
