@@ -83,7 +83,7 @@ void EnemyScript::update()
 
 void EnemyScript::start()
  {
-    parentObject->setPosition(20, 20);
+    parentObject->setPosition(200, 200);
     sf::Texture enemyFirstTexture;
     enemyFirstTexture.loadFromFile("enemy.png");
     parentObject->addComponent<Renderer>();

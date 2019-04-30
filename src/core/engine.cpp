@@ -36,6 +36,7 @@ namespace engine
         while (drawManager->getWindow()->isOpen())
         {
             logicsManager->updateLogics();
+            physicsManager->updatePhysics();
             drawManager->drawAllObjects();
             Time::updateTime();
         }

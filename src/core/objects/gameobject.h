@@ -5,6 +5,7 @@
 #include <typeinfo>
 #include "../object_components/renderer.h"
 #include "../object_components/basicscript.h"
+#include "../object_components/rectcollider.h"
 #include <iostream>
 #include "../object_components/gameobjectcomponent.h"
 #include <SFML/Graphics.hpp>
@@ -37,9 +38,13 @@ namespace engine
         bool hasComponent();
 
         void registerObjectScript(GameObjectComponent* script);
-        void registerObjectRenderer(GameObjectComponent* renderer);
         void unregisterObjectScript(GameObjectComponent* script);
+
+        void registerObjectRenderer(GameObjectComponent* renderer);
         void unregisterObjectRenderer(GameObjectComponent* renderer);
+
+        void registerObjectRectCollider(GameObjectComponent* collider);
+        void unregisterObjectRectCollider(GameObjectComponent* collider);
 
     };
 
@@ -60,6 +65,11 @@ namespace engine
         if (typeid(ComponentType).name() == typeid(Renderer).name())
         {
             registerObjectRenderer(component);
+        }
+
+        if (typeid(ComponentType).name() == typeid(RectCollider).name())
+        {
+            registerObjectRectCollider(component);
         }
     }
 

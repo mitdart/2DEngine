@@ -11,7 +11,7 @@ namespace engine
 
     void PhysicsManager::updatePhysics()
     {
-
+        detectCollisions();
     }
 
     void PhysicsManager::addCollider(RectCollider* collider)
@@ -51,8 +51,10 @@ namespace engine
     {
 
         for (auto firstCollider : rectColliders)
+        {
             for (auto secondCollider : rectColliders)
             {
+                /*
                 if (!firstCollider->parentObject->hasComponent<PhysicalBody>())
                     continue;
 
@@ -63,7 +65,13 @@ namespace engine
                 {
                     std::cout << "Collision" << std::endl;
                 }
+                */
             }
+        }
+        if (checkCollision(rectColliders[0], rectColliders[1]) == true)
+            std::cout << "Collision" << std::endl;
+
+
 
     }
 
@@ -79,15 +87,19 @@ namespace engine
         sf::Vector2f rightBottom_2 = collider_2->parentObject->position + collider_2->rightBottom;
 
         if (rightBottom_1.x < leftUpper_2.x)
+            //std::cout << rightBottom_1.x << std::endl;
             return false;
 
         if (leftUpper_1.x > rightBottom_2.x)
+            //std::cout << rightBottom_1.x << std::endl;
             return false;
 
-        if (rightBottom_1.y > leftUpper_2.y)
+        if (rightBottom_1.y < leftUpper_2.y)
+            //std::cout << rightBottom_1.y << std::endl;
             return false;
 
-        if (leftUpper_1.y < rightBottom_2.y)
+        if (leftUpper_1.y > rightBottom_2.y)
+            //std::cout << rightBottom_1.y << std::endl;
             return false;
 
         return true;
