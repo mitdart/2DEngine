@@ -26,6 +26,7 @@ namespace engine
         this->drawManager = new DrawManager();
         this->dataStorage = new DataStorage();
         this->logicsManager = new LogicsManager();
+        this->physicsManager = new PhysicsManager();
 
     }
 

@@ -28,13 +28,14 @@ public:
 
 void TestScript::update()
 {
+
     if (_2DEngine::KeyboardInput::getKey(KeyCode::A))
     {
-        parentObject->position.x -= 200 * _2DEngine::Time::deltaTime;
+        parentObject->position.x -= 300 * _2DEngine::Time::deltaTime;
     }
     if (_2DEngine::KeyboardInput::getKey(KeyCode::D))
     {
-        parentObject->position.x += 200 * _2DEngine::Time::deltaTime;
+        parentObject->position.x += 300 * _2DEngine::Time::deltaTime;
         timeCounter += _2DEngine::Time::deltaTime;
         int spriteCounter = timeCounter*16;
         parentObject->getComponent<Renderer>()->setSprite(animation[spriteCounter]);
@@ -43,16 +44,16 @@ void TestScript::update()
         {
             timeCounter = 0;
         }
-        std::cout << parentObject->position.x<< ' ' << parentObject->position.y << std::endl;
+
     }
 
     if (_2DEngine::KeyboardInput::getKey(KeyCode::W))
     {
-        parentObject->position.y -= 200 * _2DEngine::Time::deltaTime;
+        parentObject->position.y -= 300 * _2DEngine::Time::deltaTime;
     }
     if (_2DEngine::KeyboardInput::getKey(KeyCode::S))
     {
-        parentObject->position.y += 200 * _2DEngine::Time::deltaTime;
+        parentObject->position.y += 300 * _2DEngine::Time::deltaTime;
     }
 
 }
@@ -94,7 +95,7 @@ void EnemyScript::update()
     {
         parentObject->position.x += 100 * _2DEngine::Time::deltaTime;
         timeCounter += _2DEngine::Time::deltaTime;
-        std::cout << timeCounter << std::endl;
+
     }
 }
 
@@ -105,6 +106,9 @@ void EnemyScript::start()
     enemyFirstTexture.loadFromFile("enemy.png");
     parentObject->addComponent<Renderer>();
     parentObject->getComponent<Renderer>()->setSprite(enemyFirstTexture);
+    parentObject->addComponent<RectCollider>();
+    parentObject->getComponent<RectCollider>()->setCollider(-100, -100, 100, 100);
+    parentObject->getComponent<RectCollider>()->display();
  }
 
 

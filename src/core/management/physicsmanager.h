@@ -4,7 +4,7 @@
 #include "../object_components/physicalbody.h"
 #include "../object_components/rectcollider.h"
 #include <vector>
-
+#include <iostream>
 
 
 namespace engine
