@@ -1,6 +1,6 @@
 #include "physicsmanager.h"
 #include "SFML/Graphics.hpp"
-
+#include "../tools/time.h"
 
 
 namespace engine
@@ -9,7 +9,7 @@ namespace engine
     {
     }
 
-    void updatePhysics()
+    void PhysicsManager::updatePhysics()
     {
 
     }
@@ -41,14 +41,31 @@ namespace engine
                 element->prevPosition = element->parentObject->position;
 
                 if (element->gravitation)
-                    element->velocity -= sf::Vector2f(0, element->gravitationValue);
+                    element->velocity += sf::Vector2f(0, element->gravitationValue);
 
-                element->parentObject->position += element->velocity;
+                element->parentObject->position += element->velocity * Time::deltaTime;
             }
     }
 
     void PhysicsManager::detectCollisions()
-    {}
+    {
+
+        for (auto firstCollider : rectColliders)
+            for (auto secondCollider : rectColliders)
+            {
+                if (!firstCollider->parentObject->hasComponent<PhysicalBody>())
+                    continue;
+
+                if (firstCollider == secondCollider)
+                    continue;
+
+                if (checkCollision(firstCollider, secondCollider))
+                {
+                    std::cout << "Collision" << std::endl;
+                }
+            }
+
+    }
 
     void PhysicsManager::collide(CollisionDetails& details)
     {}

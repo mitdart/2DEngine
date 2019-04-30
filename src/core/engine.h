@@ -33,6 +33,7 @@ namespace engine
         DataStorage* dataStorage;
         DrawManager* drawManager;
         LogicsManager* logicsManager;
+        PhysicsManager* physicsManager;
         void engineRun();
 
     private:
