@@ -11,6 +11,7 @@ namespace engine
                 if (component->name == typeid(Renderer).name())
                 {
                     unregisterObjectRenderer(component);
+                    delete component;
                     continue;
                 }
 
@@ -24,8 +25,6 @@ namespace engine
     void GameObject::setPosition(int x, int y)
     {
         position = {x, y};
-
-
     }
 
     GameObject::GameObject(std::string m_name)
@@ -61,6 +60,15 @@ namespace engine
     void GameObject::unregisterObjectRectCollider(GameObjectComponent* collider)
     {
         Engine::instance()->physicsManager->removeCollider(static_cast<RectCollider*>(collider));
+    }
+    void GameObject::registerObjectPhysicalBody(GameObjectComponent* physBody)
+    {
+        Engine::instance()->physicsManager->addPhysicalBody(static_cast<PhysicalBody*>(physBody));
+    }
+
+    void GameObject::unregisterObjectPhysicalBody(GameObjectComponent* physBody)
+    {
+        Engine::instance()->physicsManager->removePhysicalBody(static_cast<PhysicalBody*>(physBody));
     }
 
 }

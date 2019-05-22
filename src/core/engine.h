@@ -17,7 +17,7 @@
 using engine::Renderer;
 using engine::BasicScript;
 using engine::RectCollider;
-
+using engine::PhysicalBody;
 
 namespace engine
 {

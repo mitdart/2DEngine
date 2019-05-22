@@ -14,7 +14,7 @@ namespace engine
         void updateLogics();
         void startAllScripts();
         void updateAllScripts();
-
+        void collideObject(GameObject* object, CollisionDetails& details);
         void addScript(BasicScript* script);
         void removeScript(BasicScript* script);
 

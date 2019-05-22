@@ -1,7 +1,7 @@
 #include "physicsmanager.h"
 #include "SFML/Graphics.hpp"
 #include "../tools/time.h"
-
+#include "../engine.h"
 
 namespace engine
 {
@@ -11,6 +11,7 @@ namespace engine
 
     void PhysicsManager::updatePhysics()
     {
+        calculatePhysics();
         detectCollisions();
     }
 
@@ -38,8 +39,6 @@ namespace engine
     {
         for (auto element : physicalBodies)
             {
-                element->prevPosition = element->parentObject->position;
-
                 if (element->gravitation)
                     element->velocity += sf::Vector2f(0, element->gravitationValue);
 
@@ -57,26 +56,55 @@ namespace engine
                 /*
                 if (!firstCollider->parentObject->hasComponent<PhysicalBody>())
                     continue;
-
+                */
                 if (firstCollider == secondCollider)
                     continue;
 
                 if (checkCollision(firstCollider, secondCollider))
                 {
-                    std::cout << "Collision" << std::endl;
+                    if (firstCollider->isPossibleCollision && secondCollider->isPossibleCollision)
+                    {
+                        auto details_1 = setCollisionDetails(firstCollider, secondCollider);
+                        auto details_2 = details_1;
+                        details_2.collider1 = details_1.collider2;
+                        details_2.collider2 = details_1.collider1;
+                        pushApart(details_1);
+                        Engine::instance()->logicsManager->collideObject(firstCollider->parentObject, details_1);
+                        Engine::instance()->logicsManager->collideObject(secondCollider->parentObject, details_2);
+                        //firstCollider->isPossibleCollision = false;
+                        //secondCollider->isPossibleCollision = false;
+                    }
+                } else
+                {
+                    //firstCollider->isPossibleCollision = true;
+                    //secondCollider->isPossibleCollision = true;
                 }
-                */
+
             }
         }
-        if (checkCollision(rectColliders[0], rectColliders[1]) == true)
-            std::cout << "Collision" << std::endl;
+    }
+
+    void PhysicsManager::collide(CollisionDetails& details)
+    {
+
+    }
+
+    void PhysicsManager::pushApart(CollisionDetails& details)
+    {
+        auto object_1 = details.collider1->parentObject;
+        auto object_2 = details.collider2->parentObject;
+        if (!details.collider1->isActive || !details.collider2->isActive)
+        {
+            return;
+        }
+
+
+        object_1->position -= object_1->getComponent<PhysicalBody>()->velocity * Time::deltaTime;
+        object_2->position -= object_2->getComponent<PhysicalBody>()->velocity * Time::deltaTime;
 
 
 
     }
-
-    void PhysicsManager::collide(CollisionDetails& details)
-    {}
 
     bool PhysicsManager::checkCollision(RectCollider* collider_1, RectCollider* collider_2)
     {
@@ -105,8 +133,17 @@ namespace engine
         return true;
     }
 
-    CollisionDetails PhysicsManager::getCollisionDetails(RectCollider* collider_1, RectCollider* collider_2)
-    {}
+    CollisionDetails PhysicsManager::setCollisionDetails(RectCollider* collider_1, RectCollider* collider_2)
+        {
+
+            float depth_x_1 = abs(collider_1->parentObject->position.x + collider_1->leftUpper.x - collider_2->rightBottom.x - collider_2->parentObject->position.x);
+            float depth_x_2 = abs(collider_1->parentObject->position.x + collider_1->rightBottom.x - collider_2->leftUpper.x - collider_2->parentObject->position.x);
+            float depth_y_1 = abs(collider_1->parentObject->position.y + collider_1->leftUpper.y - collider_2->rightBottom.y - collider_2->parentObject->position.y);
+            float depth_y_2 = abs(collider_1->parentObject->position.y + collider_1->rightBottom.y - collider_2->leftUpper.y - collider_2->parentObject->position.x);
+
+            return CollisionDetails(collider_1, collider_2, std::min(depth_x_1, depth_x_2), std::min(depth_y_1, depth_y_2));
+        }
+
 
 }
 

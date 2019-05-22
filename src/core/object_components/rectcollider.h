@@ -13,17 +13,18 @@ namespace engine
 
     struct CollisionDetails
     {
-        /*
-        CollisionDetails(BoxCollider* obj1, BoxCollider* obj2, float depth, sf::Vector2f trajectory) :
-        collider1(obj1), collider2(obj2), depth(depth), collisionTrajectory(trajectory)
-        {};
 
-        BoxCollider* collider1 = 0;
-        BoxCollider* collider2 = 0;
+        CollisionDetails(RectCollider* object_1, RectCollider* object_2, float depth_x, float depth_y) :
+        collider1(object_1), collider2(object_2), depth_x(depth_x), depth_y(depth_y)
+        {}
 
-        float depth;
-        sf::Vector2f collisionTrajectory;
-        */
+        RectCollider* collider1 = 0;
+        RectCollider* collider2 = 0;
+
+        float depth_x;
+        float depth_y;
+
+
     };
 
 
@@ -41,9 +42,11 @@ namespace engine
 
         sf::Vector2f leftUpper;
         sf::Vector2f rightBottom;
+        sf::Vector2f velocity;
 
         bool isDynamic = true;
         bool isActive = true;
+        bool isPossibleCollision = true;
 
      private:
         bool displayed = false;

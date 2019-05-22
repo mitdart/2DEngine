@@ -12,12 +12,13 @@ namespace engine
     public:
         PhysicalBody();
         float gravitationValue = 1.0f;
-        bool gravitation = true;
+        bool gravitation = false;
 
         float mass = 1.0f;
 
         sf::Vector2f velocity;
-        sf::Vector2f prevPosition;
+        //sf::Vector2f prevPosition;
+
     };
 }
 

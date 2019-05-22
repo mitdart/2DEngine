@@ -17,7 +17,6 @@ namespace engine
 
     void EventManager::catchEvents()
     {
-
         sf::Event event;
         auto window = Engine::instance()->drawManager->getWindow();
 

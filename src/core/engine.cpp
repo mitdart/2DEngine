@@ -35,10 +35,11 @@ namespace engine
 
         while (drawManager->getWindow()->isOpen())
         {
+            Time::updateTime();
             logicsManager->updateLogics();
             physicsManager->updatePhysics();
             drawManager->drawAllObjects();
-            Time::updateTime();
+
         }
 
     }

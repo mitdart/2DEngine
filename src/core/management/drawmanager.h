@@ -15,10 +15,6 @@ namespace engine
         static const int height = 800;
     };
 
-
-
-
-
     class DrawManager
     {
     public:

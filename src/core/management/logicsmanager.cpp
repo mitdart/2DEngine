@@ -11,7 +11,7 @@ namespace engine
 
     void LogicsManager::updateLogics()
     {
-        Time::updateTime;
+
 
         eventManager->catchEvents();
 
@@ -34,6 +34,15 @@ namespace engine
             script->update();
     }
 
+    void LogicsManager::collideObject(GameObject* object, CollisionDetails& details)
+    {
+        for (auto script : allScripts)
+                    if (script->parentObject == object)
+                    {
+                        script->collide(details);
+                    }
+    }
+
     void LogicsManager::addScript(BasicScript* script)
     {
         notStartedScripts.push_back(script);
@@ -42,7 +51,7 @@ namespace engine
 
     void LogicsManager::removeScript(BasicScript* script)
     {
-        allScripts.erase(remove(allScripts.begin(), allScripts.end(), script), allScripts.end());
+        allScripts.clear();
     }
 
 }

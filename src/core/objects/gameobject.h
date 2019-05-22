@@ -6,6 +6,7 @@
 #include "../object_components/renderer.h"
 #include "../object_components/basicscript.h"
 #include "../object_components/rectcollider.h"
+#include "../object_components/physicalbody.h"
 #include <iostream>
 #include "../object_components/gameobjectcomponent.h"
 #include <SFML/Graphics.hpp>
@@ -45,7 +46,8 @@ namespace engine
 
         void registerObjectRectCollider(GameObjectComponent* collider);
         void unregisterObjectRectCollider(GameObjectComponent* collider);
-
+        void registerObjectPhysicalBody(GameObjectComponent* physBody);
+        void unregisterObjectPhysicalBody(GameObjectComponent* physBody);
     };
 
     template <typename ComponentType>
@@ -70,6 +72,10 @@ namespace engine
         if (typeid(ComponentType).name() == typeid(RectCollider).name())
         {
             registerObjectRectCollider(component);
+        }
+        if (typeid(ComponentType).name() == typeid(PhysicalBody).name())
+        {
+            registerObjectPhysicalBody(component);
         }
     }
 

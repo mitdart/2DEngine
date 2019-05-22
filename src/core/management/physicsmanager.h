@@ -30,10 +30,10 @@ namespace engine
         void calculatePhysics();
         void detectCollisions();
         void collide(CollisionDetails& details);
-
+        void pushApart(CollisionDetails& details);
         bool checkCollision(RectCollider* collider_1, RectCollider* collider_2);
 
-        CollisionDetails getCollisionDetails(RectCollider* collider_1, RectCollider* collider_2);
+        CollisionDetails setCollisionDetails(RectCollider* collider_1, RectCollider* collider_2);
 
     };
 
